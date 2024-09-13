@@ -20,6 +20,7 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', RedirectView.as_view(url='/about/', permanent=True), name='home_redirect'),  # Перенаправление с корневого URL на /about/
+    path('', RedirectView.as_view(url='/about/', permanent=True), name='home_redirect'),  # ГЏГҐГ°ГҐГ­Г ГЇГ°Г ГўГ«ГҐГ­ГЁГҐ Г± ГЄГ®Г°Г­ГҐГўГ®ГЈГ® URL Г­Г  /about/
     path('about/', include('about.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
