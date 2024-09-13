@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Вход</h2>
+<form method="POST" class="standard-form">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Имя пользователя" required class="standard-input">
+    <input type="password" name="password" placeholder="Пароль" required class="standard-input">
+    <button type="submit" class="button">Войти</button>
+</form>
+<a class="button white-button" href= "{% url 'register' %}">У меня ещё нет аккаунта</a>
+
+{% endblock %}
