@@ -11,30 +11,63 @@
 <body>
 
     <header>
-        <a class="header-logo">
-            <img alt="Логотип" src="{% static 'logos/logo-pink.jpg' %}" />
-        </a>
-        <nav>
-            <ul>
-                <li><a href=""></a></li> про нас
-                <li><a href=""></a></li> книжки
-                <li><a href=""></a></li> радіо
-                <li><a href=""></a></li> лента
-                <li><a href=""></a></li> стр пользователя
-            </ul>
-        </nav>
+        <div class="container">
+            <a class="header-logo" src="{% url 'about' %}">
+                <img alt="" src="{% static 'logos/logo-letter.png' %}" />
+            </a>
+            <nav>
+                <ul class="menu">
+                    <li class="menu-element {% if request.path.startswith('/about/') %}active{% endif %}">
+                        <a href="{% url 'about' %}">
+                            <svg width="24" height="24">
+                                <use href="icons/question_mark.svg#question_mark"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="menu-element {% if request.path.startswith('/books/') %}active{% endif %}">
+                        <a href="">
+                            <svg width="24" height="24">
+                                <use href="icons/book.svg#book"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="menu-element {% if request.path.startswith('/radio/') %}active{% endif %}">
+                        <a href="">
+                            <svg width="24" height="24">
+                                <use href="icons/radio.svg#radio"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="menu-element {% if request.path.startswith('/feed/') %}active{% endif %}">
+                        <a href="">
+                            <svg width="24" height="24">
+                                <use href="icons/article.svg#article"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="menu-element {% if request.path.startswith('/account/') %}active{% endif %}">
+                        <a href="">
+                            <svg width="24" height="24">
+                                <use href="icons/account_box.svg#account_box"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
     </main>
 
     <footer>
         <div class="container">
-            <img class="footer-logo" alt="Логотип" src="{% static 'logos/logo-black.jpg' %}" />
-            <!--<div class="footer-img-thumb">
-                <img alt="" src="{% static 'illustrations/logo-black.jpg' %}" />
-            </div>-->
+            <div class="footer-img-thumb full-width">
+                <img alt="" src="{% static 'illustrations/art-egalite-14.jpg' %}" />
+            </div>
             
         </div>
     </footer>
