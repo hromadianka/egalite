@@ -7,15 +7,15 @@
     <p>{{ about.description }}</p>
     <div class="resource-links">
         {% for resourse_link in resourse_links %}
-            <a href="">
-                <img src="" alt="" />
+            <a href="{{ resource_link.url }}">
+                <img src="" alt="{{ resource_link.url }}" />
             </a>
         {% endfor %}
     </div>
 </section>
 
 <div class="bookstore-illustrations">
-    <img src="" alt="" />
+    <img src="{% static 'illustrations/photo1' %}" alt="" />
     <img src="" alt="" />
     <img src="" alt="" />
 </div>
@@ -23,8 +23,16 @@
 <div class="stores-container">
     {% for store in stores %}
     <div class="store-card">
-        <!-- иконка магаза/гео и название/адрес со ссылкой, при наведении меняют цвет -->
-        <a href=""></a>
+        РџР›Р®РЎ РњР•РќРЇРўР¬ Р¦Р’Р•Рў РџР Р РҐРћР’Р•Р Р•
+        <svg>
+            <use href="{% static 'icons/store.svg#store' %}">
+        </svg>
+        <a href="{{ store.map_url ">
+            <div>
+                <p>{{ store.name }}</p>
+                <p>{{ store.address }}</p>
+            </div>
+        </a>
     </div>
     {% endfor %}
 </div>
