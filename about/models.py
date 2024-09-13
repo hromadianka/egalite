@@ -10,6 +10,7 @@ class AboutUs(models.Model):
 
 class ResourceLink(models.Model):
     name = models.CharField(max_length=255)
+    icon = models.ImageField(upload_to="icons/", blank=True, null=True)
     url = models.URLField()
 
     def __str__(self):
@@ -18,6 +19,7 @@ class ResourceLink(models.Model):
 class Store(models.Model):
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
-
+    map_url = models.URLField()
+    
     def __str__(self):
         return self.name
