@@ -17,7 +17,7 @@ def register_view(request):
         )
         login(request, user)
         return redirect('about')
-    return render(request, 'register.html')
+    return render(request, 'accounts/register.html')
 
 class CustomLoginView(LoginView):
-    template_name = 'login.html'
+    template_name = 'accounts/login.html'

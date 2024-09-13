@@ -2,6 +2,32 @@
 
 {% block content %}
 
+<section class="full-width">
+    img, logo, name, headings/subheadings
+    <p>{{ about.description }}</p>
+    <div class="resource-links">
+        {% for resourse_link in resourse_links %}
+            <a href="">
+                <img src="" alt="" />
+            </a>
+        {% endfor %}
+    </div>
+</section>
+
+<div class="bookstore-illustrations">
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+</div>
+
+<div class="stores-container">
+    {% for store in stores %}
+    <div class="store-card">
+        <!-- иконка магаза/гео и название/адрес со ссылкой, при наведении меняют цвет -->
+        <a href=""></a>
+    </div>
+    {% endfor %}
+</div>
 
 
 {% endblock %}

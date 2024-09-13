@@ -1,1 +1,24 @@
+{% extends 'base.html' %}
 
+{% block content %}
+
+<h1>Каталог</h1>
+
+<!-- мб про пдф  -->
+
+<section class="product-gallery">
+
+    {% for product in products %}
+
+    <a href="{% url 'product' product.id %}" class="product-card">
+        <img src="{{ product.image.url }}" alt="{{ product.title }}" />
+    </a>
+
+    {% endfor %}
+
+
+</section>
+
+
+
+{% endblock %}
