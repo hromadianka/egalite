@@ -2,7 +2,8 @@
 
 {% block content %}
 
-<h2>Зарегистрироваться</h2>
+<h1>Зарегистрироваться</h1>
+
 <form method="POST" class="standard-form">
     {% csrf_token %}
     <input type="text" name="username" placeholder="Имя пользователя" class="standard-input" required>
